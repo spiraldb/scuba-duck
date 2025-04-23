@@ -9,7 +9,7 @@ SELECT quack('Sam');
 Catalog Error: Scalar Function with name quack does not exist!
 
 # Require statement will ensure this test is run with this extension loaded
-require quack
+require underwater_quack
 
 # Confirm the extension works
 query I

@@ -1,6 +1,6 @@
 #define DUCKDB_EXTENSION_MAIN
 
-#include "quack_extension.hpp"
+#include "underwater_quack_extension.hpp"
 #include "duckdb.hpp"
 #include "duckdb/common/exception.hpp"
 #include "duckdb/common/string_util.hpp"
@@ -44,14 +44,14 @@ static void LoadInternal(DatabaseInstance &instance) {
     ExtensionUtil::RegisterFunction(instance, quack_openssl_version_scalar_function);
 }
 
-void QuackExtension::Load(DuckDB &db) {
+void UnderwaterQuackExtension::Load(DuckDB &db) {
 	LoadInternal(*db.instance);
 }
-std::string QuackExtension::Name() {
+std::string UnderwaterQuackExtension::Name() {
 	return "underwater_quack";
 }
 
-std::string QuackExtension::Version() const {
+std::string UnderwaterQuackExtension::Version() const {
 #ifdef EXT_VERSION_QUACK
 	return EXT_VERSION_QUACK;
 #else
@@ -63,12 +63,12 @@ std::string QuackExtension::Version() const {
 
 extern "C" {
 
-DUCKDB_EXTENSION_API void quack_init(duckdb::DatabaseInstance &db) {
+DUCKDB_EXTENSION_API void underwater_quack_init(duckdb::DatabaseInstance &db) {
     duckdb::DuckDB db_wrapper(db);
-    db_wrapper.LoadExtension<duckdb::QuackExtension>();
+    db_wrapper.LoadExtension<duckdb::UnderwaterQuackExtension>();
 }
 
-DUCKDB_EXTENSION_API const char *quack_version() {
+DUCKDB_EXTENSION_API const char *underwater_quack_version() {
 	return duckdb::DuckDB::LibraryVersion();
 }
 }
