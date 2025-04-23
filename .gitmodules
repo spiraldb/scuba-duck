@@ -1,8 +1,8 @@
-[submodule "duckdb"]
-	path = duckdb
+[submodule "nested_folder/duckdb"]
+	path = nested_folder/duckdb
 	url = https://github.com/duckdb/duckdb
 	branch = main
-[submodule "extension-ci-tools"]
-	path = extension-ci-tools
+[submodule "nested_folder/extension-ci-tools"]
+	path = nested_folder/extension-ci-tools
 	url = https://github.com/duckdb/extension-ci-tools
 	branch = main
