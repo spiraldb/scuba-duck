@@ -48,7 +48,7 @@ void QuackExtension::Load(DuckDB &db) {
 	LoadInternal(*db.instance);
 }
 std::string QuackExtension::Name() {
-	return "quack";
+	return "underwater_quack";
 }
 
 std::string QuackExtension::Version() const {
